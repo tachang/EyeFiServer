@@ -568,7 +568,7 @@ class EyeFiRequestHandler(BaseHTTPRequestHandler):
     snonceElement.appendChild(snonceElementText)
     
     transfermodeElement = doc.createElement("transfermode")
-    transfermodeElementText = doc.createTextNode("2")
+    transfermodeElementText = doc.createTextNode(handler.extractedElements["transfermode"])
     transfermodeElement.appendChild(transfermodeElementText)
 
     transfermodetimestampElement = doc.createElement("transfermodetimestamp")
