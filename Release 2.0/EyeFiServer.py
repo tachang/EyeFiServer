@@ -572,7 +572,7 @@ class EyeFiRequestHandler(BaseHTTPRequestHandler):
     transfermodeElement.appendChild(transfermodeElementText)
 
     transfermodetimestampElement = doc.createElement("transfermodetimestamp")
-    transfermodetimestampElementText = doc.createTextNode("1230268824")
+    transfermodetimestampElementText = doc.createTextNode(handler.extractedElements["transfermodetimestamp"])
     transfermodetimestampElement.appendChild(transfermodetimestampElementText)
 
     upsyncallowedElement = doc.createElement("upsyncallowed")
