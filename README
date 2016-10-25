@@ -1,0 +1,73 @@
+This is eyefiserver version 2.4 +github snapshoot
+
+INSTALLATION
+------------
+Structure of this package :
+
+        .
+        |-- etc/
+        |   |-- eyefiserver.conf
+        |   `-- init.d/
+        |       `-- eyefiserver
+        |-- usr/
+            `-- local/
+                |-- bin/
+                |   `-- eyefiserver
+                `-- share/
+                    \-- man/
+                        |-- man1/
+                        |   `-- eyefiserver.1
+                        `-- man5/
+                            `-- eyefiserver.conf.5
+
+If you're familiar with linux, that basically sums it up :-)
+
+You need to copy the files in the right place.
+
+Optionally add stuff to your start-stop sequence. On debian/ubuntu, use
+update-rc.d:
+    sudo update-rc.d eyefiserver defaults
+
+et voilà.
+
+
+CONFIGURATION
+-------------
+To use this script you need to have your Eye-Fi "upload key".
+You can find it after configuring the card, which you can currently on do only
+on Windows or Mac:
+
+On Windows:
+ See C:\Documents and Settings\<User>\Application Data\Eye-Fi\Settings.xml
+On Mac:
+ See ~/Applications Data/Eye-Fi/Settings.xml
+
+You must search for it and paste it in eyefiserver.conf. Then server needs to be
+reloaded after editing that file.
+
+See manual for a full description of options.
+
+
+MAN PAGES
+---------
+Man pages can be generated using txt2man utility:
+txt2man -t eyefiserver -r "eyefiserver 2.3" -s 1 -v "Executable programs or shell commands" -I file doc/eyefiserver.txt > doc/eyefiserver.1
+txt2man -t eyefiserver.conf -r "eyefiserver 2.3" -s 5 -v "File formats and conventions" doc/eyefiserver.conf.txt > doc/eyefiserver.conf.5
+
+
+LICENSE
+-------
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+

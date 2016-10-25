@@ -1,0 +1,138 @@
+NAME
+eyefiserver.conf - Settings file for eyefiserver
+
+DESCRIPTION
+/etc/eyefiserver.conf is organised in sections whose name are enclosed in
+brackets.
+
+The global section is named [EyeFiServer]. The names of the other optional
+sections are the MAC address of the Eye-Fi card. The mac address must be in
+lower case and without dashes. For example, if your card has a MAC address
+00-18-56-50-EF-F9, the section should be named [00185650eff9].
+
+All keys described below are searched first in the section specific to the
+Eye-Fi card, then, if not found, it is search in the global [EyeFiServer]
+section. This means you can set up a global default value, then override it
+for a few specific cards.
+
+You don't need card specific section at all if you have only one Eye-Fi card.
+
+There is only one compulsory key, the upload_key. See below.
+
+KEYS
+
+loglevel  
+       This defines the verbosity of the server. Valid values are DEBUG, INFO,
+       WARNING, ERROR and FATAL.
+
+       Default value is DEBUG.
+
+       This is the one exception to section behaviour as this key is only
+       allowed in the [EyeFiServer] global section.
+upload_key  
+       To use this script you need to have your Eye-Fi upload key.
+
+       You can find it after configuring the card, which you can currently on do
+       only on windows or mac.
+
+       Windows: see
+       C:\\Documents and Settings\\<User>\\Application Data\\Eye-Fi\\Settings.xml
+
+       Mac: see ~/Applications Data/Eye-Fi/Settings.xml
+upload_dir  
+       This is the location where the files from the Eye-Fi card will be put.
+
+       Starting ~ will be replaced by user home directory.
+        
+       %X will be replaced by a datetime fragment according to python
+       time.strftime format: For exemple, on January 1st 2013, running as
+       www-data, upload_dir=~/eyefi/%Y/%Y%m%d will put files in
+       /var/www/eyefi/2013/20130101/.
+       See http://docs.python.org/library/time.html#time.strftime.
+
+       Default value is ~/eyefi.
+complete_execute  
+       Name of a command to be run after each file download.
+
+       Example on Windows:
+
+       complete_execute=C:\\Windows\\system32\\mspaint.exe
+
+       Example on Linux:
+
+       complete_execute=/usr/bin/display
+progress_execute  
+       This parameter executes the specified command every few seconds while
+       file is being received.
+
+       Parameters of the called program:
+
+       $1: the full file path of the temporary TAR file. Thumbnail can be
+       extracted from the partial file.
+
+       $2: final tar size in bytes
+
+       $3: speed in bps
+use_date_from_file  
+       This can be On or Off.
+
+       upload_dir key might contain variable parts such as %Y%m%d, that are
+       replaced by the datetime values.
+
+       If use_date_from_file is On, the reference date will be the one the
+       picture was taken rather than the transfer date.
+
+       Default is Off.
+correct_mtime  
+       This is only useful is you activated use_date_from_file. This can be On
+       or Off.
+
+       EyeFi puts local timestamp into its tarfile instead UTC, so extracted
+       files get a wrong modification time.
+
+       Default is On, so that this behaviour is corrected by default. You should
+       not need to touch that value.
+integrity_verification  
+       This can be On or Off.
+
+       When turned Off, it disables file integrity checks. This used to be
+       necessary when downloading large files, because the algorithm was so slow
+       that timeout occurred. This should no longer be the case.
+
+       Default value is On.
+EXAMPLES
+  Minimal example
+
+      [EyeFiServer]
+      upload_key=774e46f14990456a9ab7b4d22f1da138
+
+  Multicard example
+
+      [EyeFiServer]
+      loglevel=INFO
+
+      [00185650efe9]
+      upload_key=774e46f14990456a9ab7b4d22f1da138
+      upload_dir=/var/www/eyefi/%Y/card1/%Y%m%d
+
+      [00185650efea]
+      upload_key=11a3e229084349bc25d97e29393ced1d
+      upload_dir=/var/www/eyefi/%Y/card2/%Y%m%d
+
+  Progress meter, using a progress_execute hook:
+
+      #!/bin/sh
+      # That file is an example for progress_execute target
+      # It requires X server access, run eyefiserver as a regular user
+      FILENAME=$1
+      TARGETSIZE=$2
+      SPEED=$3
+      notify-send -u low "Receiving $FILENAME" "Speed: $SPEED bps"
+
+AUTHORS
+eyefiserver was written by Jeffrey Tchang.
+
+This manual page was written by Jean-Michel Nirgal Vourgère.
+
+SEE ALSO
+eyefiserver(1)

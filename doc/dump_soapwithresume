@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="EyeFi/SOAP/EyeFilm"><SOAP-ENV:Body><ns1:StartSession><macaddress>00185650eff9</macaddress><cnonce>299f0358d5f190537e91b017ee059c78</cnonce><transfermode>546</transfermode><transfermodetimestamp>1341579376</transfermodetimestamp></ns1:StartSession></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Body><StartSessionResponse xmlns="http://localhost/api/soap/eyefilm"><credential>8a33212c2165330a2e758ddb74ef1e6f</credential><snonce>1e695806fb513f5cdcbc26574a137d68</snonce><transfermode>546</transfermode><transfermodetimestamp>1341579376</transfermodetimestamp><upsyncallowed>true</upsyncallowed></StartSessionResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="EyeFi/SOAP/EyeFilm"><SOAP-ENV:Body><ns1:GetPhotoStatus><credential>764c96bf734e461c33259e74af80ebbf</credential><macaddress>00185650eff9</macaddress><filename>GOPR0893.JPG.tar</filename><filesize>2652672</filesize><filesignature>af30c45eaa98fd4c512078efb8f11ad1</filesignature><flags>4</flags></ns1:GetPhotoStatus></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Body><GetPhotoStatusResponse xmlns="http://localhost/api/soap/eyefilm"><fileid>1436</fileid><offset>0</offset></GetPhotoStatusResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="EyeFi/SOAP/EyeFilm"><SOAP-ENV:Body><ns1:UploadPhoto><fileid>1436</fileid><macaddress>00185650eff9</macaddress><filename>GOPR0893.JPG.tar</filename><filesize>2652672</filesize><filesignature>35310000708e030000000000d8110300</filesignature><encryption>none</encryption><flags>4</flags></ns1:UploadPhoto></SOAP-ENV:Body></SOAP-ENV:Envelope>
+...
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Body><UploadPhotoResponse xmlns="http://localhost/api/soap/eyefilm"><success>false</success></UploadPhotoResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+----------------------------------------
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="EyeFi/SOAP/EyeFilm"><SOAP-ENV:Body><ns1:StartSession><macaddress>00185650eff9</macaddress><cnonce>84f4211ab1447a13b332c330cb49274d</cnonce><transfermode>546</transfermode><transfermodetimestamp>1341579376</transfermodetimestamp></ns1:StartSession></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Body><StartSessionResponse xmlns="http://localhost/api/soap/eyefilm"><credential>3db82ce515b1b713e6c02ccadb328b9e</credential><snonce>f540d3a3bb1a8accad70ef4f544bd6aa</snonce><transfermode>546</transfermode><transfermodetimestamp>1341579376</transfermodetimestamp><upsyncallowed>true</upsyncallowed></StartSessionResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="EyeFi/SOAP/EyeFilm"><SOAP-ENV:Body><ns1:GetPhotoStatus><credential>232a72707e70f40ceb5e77f6487d700f</credential><macaddress>00185650eff9</macaddress><filename>GOPR0893.JPG.tar</filename><filesize>2652672</filesize><filesignature>af30c45eaa98fd4c512078efb8f11ad1</filesignature><flags>4</flags></ns1:GetPhotoStatus></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Body><GetPhotoStatusResponse xmlns="http://localhost/api/soap/eyefilm"><fileid>1436</fileid><offset>921600</offset></GetPhotoStatusResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="EyeFi/SOAP/EyeFilm"><SOAP-ENV:Body><ns1:UploadPhoto><fileid>1436</fileid><macaddress>00185650eff9</macaddress><filename>GOPR0893.JPG.tar</filename><filesize>2652672</filesize><filesignature>35310000f091030000000000d8110300</filesignature><encryption>none</encryption><flags>4</flags></ns1:UploadPhoto></SOAP-ENV:Body></SOAP-ENV:Envelope>
+...
+
+<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"><SOAP-ENV:Body><UploadPhotoResponse xmlns="http://localhost/api/soap/eyefilm"><success>true</success></UploadPhotoResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>
+
+
+(<?xml version="1.0" encoding="UTF-8"?><SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="EyeFi/SOAP/EyeFilm"><SOAP-ENV:Body><ns1:MarkLastPhotoInRoll><macaddress>00185650eff9</macaddress><mergedelta>0</mergedelta></ns1:MarkLastPhotoInRoll></SOAP-ENV:Body></SOAP-ENV:Envelope>)

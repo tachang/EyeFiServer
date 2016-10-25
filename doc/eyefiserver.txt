@@ -1,0 +1,42 @@
+NAME
+eyefiserver - Daemon for receiving files from Eye-Fi SD devices
+
+SYNOPSIS
+eyefiserver [options]
+
+DESCRIPTION
+This starts an HTTP server on port 59278 that will receive files.
+
+OPTIONS
+  -h, --help  
+      Display a short usage help.
+  --conf file  
+      Additional location for configuration files. Options are first read in
+      /etc/eyefiserver.conf, then in ~/eyefiserver.conf. Any file name specified
+      here will overwrite the values already parsed.
+
+      That option might be used multiple times. Latest values override previous ones.
+  --log file  
+      Log to file.
+
+DIAGNOSTICS
+You can increase log level up to DEBUG to get additional messages.
+See eyefiserver.conf(5).
+
+The logger doesn't catch exceptions from do_POST threads and such. So these
+errors are logged to stderr only, not in log files. You should avoid debugging
+while running as a daemon.
+
+FILES
+- /etc/eyefiserver.conf
+- ~/eyefiserver.conf
+- /var/log/eyefiserver.log
+
+AUTHORS
+eyefiserver was written by Jeffrey Tchang.
+
+This manual page was written by Jean-Michel Nirgal Vourgère for the Debian
+project (but may be used by others).
+
+SEE ALSO
+eyefiserver.conf(5)

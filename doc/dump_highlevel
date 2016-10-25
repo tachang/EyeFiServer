@@ -1,0 +1,29 @@
+MacAddress="00-18-56-50-ef-f9"
+UploadKey cdfd3b683247f7f05a0e9ae031818489
+
+
+<=  StartSession(macaddress=00185650eff9, cnonce=299f0358d5f190537e91b017ee059c78, transfermode=546, transfermodetimestamp=1341579376)
+=> StartSessionResponse(credential = 8a33212c2165330a2e758ddb74ef1e6f , snonce = 1e695806fb513f5cdcbc26574a137d68 , transfermode=546 , transfermodetimestamp=1341579376, upsyncallowed=true)
+note: md5(00185650eff9 299f0358d5f190537e91b017ee059c78 cdfd3b683247f7f05a0e9ae031818489) = 8a33212c2165330a2e758ddb74ef1e6f
+
+<= GetPhotoStatus(credential = 764c96bf734e461c33259e74af80ebbf , macaddress = 00185650eff9 , filename = GOPR0893.JPG.tar , filesize = 2652672 , filesignature = af30c45eaa98fd4c512078efb8f11ad1 , flags=4)
+note: md5(00185650eff9 cdfd3b683247f7f05a0e9ae031818489 1e695806fb513f5cdcbc26574a137d68) = 764c96bf734e461c33259e74af80ebbf
+=> GetPhotoStatusResponse(fileid=1436, offset=0)
+
+<= UploadPhoto(fileid=1436, macaddress=00185650eff9, filename=GOPR0893.JPG.tar, filesize=2652672, filesignature = 35310000708e030000000000d8110300 , encryption=none, flags=4)
+[eye-fi card powered off, timeout occurs]
+=> UploadPhotoResponse(success=false)
+
+----------------------------------------
+
+<= StartSession(macaddress=00185650eff9, cnonce=84f4211ab1447a13b332c330cb49274d, transfermode=546, transfermodetimestamp=1341579376)
+=> StartSessionResponse(credential=3db82ce515b1b713e6c02ccadb328b9e, snonce=f540d3a3bb1a8accad70ef4f544bd6aa, transfermode=546, transfermodetimestamp=1341579376, upsyncallowed=true)
+
+<= GetPhotoStatus(credential=232a72707e70f40ceb5e77f6487d700f, macaddress=00185650eff9, filename=GOPR0893.JPG.tar, filesize=2652672, filesignature=af30c45eaa98fd4c512078efb8f11ad1, flags=4)
+=> GetPhotoStatusResponse(fileid=1436, offset=921600)
+
+<= UploadPhoto(fileid=1436, macaddress=00185650eff9, filename=GOPR0893.JPG.tar, filesize=2652672, filesignature=35310000f091030000000000d8110300, encryption=none, flags=4)
+=> UploadPhotoResponse(success=true)
+
+<= MarkLastPhotoInRoll(macaddress=00185650eff9, mergedelta=0)
+=> MarkLastPhotoInRollResponse()

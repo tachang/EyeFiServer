@@ -1,0 +1,116 @@
+eyefiserver (2.3+git) UNRELEASED
+
+  [ John Seekins ]
+  * Fix default loglevel value
+  * Switch to argpase.
+
+  [ Alex Volkov ]
+  * When use_date_from_file is on, the dates were wrongly corrected from UTC.
+    This is fixed.
+
+  [ Nirgal Vourgère ]
+  * Don't send Date: and Server: headers twice.
+  * Fix error message when GetPhotoStatus uses an unknown macaddress.
+  * Coding style cleanup to comply with isort and flake8.
+  * Add version in manual.
+  * Add changelog.
+
+ -- Nirgal Vourgère <jmv_deb@nirgal.com>
+
+eyefiserver (2.3)
+
+  [ Alex Volkov ]
+  * Use getboolean() to read use_date_from_file config.
+
+ -- Nirgal Vourgère <jmv_deb@nirgal.com>  4 Apr 2015
+
+eyefiserver (2.3 rc2)
+
+  * Remove picture data from doc/dump_http and compress it.
+
+ -- Nirgal Vourgère <jmv_deb@nirgal.com>  17 Oct 2012
+
+eyefiserver (2.3 rc1)
+
+  That version is mostly based on version 2.0 by Jeff Tchang, due to new line
+  encodings and other files difficult to diff, like rtf.
+
+  [ Pieter van Kemenade ]
+  * Add unix-like structure, including init script and /etc file.
+  * Use ConfigParser.
+
+  [ Jeremy Fitzhardinge ]
+  * Clean up CRLF.
+  * Allow additionnal eyefiserver.conf in user $HOME.
+
+  [ Grant Nakamura ]
+  * Add support for multiple cards.
+  * New integrity_verification directive to turn off integritydigest
+    verification.
+
+  [ Nirgal Vourgère ]
+  * Use default date format for logging.
+  * Change the way HTTP headers are analyzed.
+  * Show transfer speed in debug log
+  * Re factor EyeFiRequestHandler to avoid recursion. Issue "Keep-Alive"
+    header unless we close the connection.
+  * Change parameter into --log and --conf options. Use default values.
+  * Add socket timeouts.
+  * Add support for SIGHUP to reload configuration.
+  * Add loglevel directive.
+  * Write tar file to disk as it is received. This allows thumbnail previews.
+  * Report progress every X seconds rather than X bytes.
+  * New directive use_date_from_file to use tar headers. Default is to use
+    transfer date.
+  * Fix integrity digest algorithm.
+  * Add support for transfer resume after timeout.
+  * Add GetPhotoStatus md5 challenge check.
+  * Abort file transfers on shutdown requests.
+  * Added manual.
+
+ -- Nirgal Vourgère <jmv_deb@nirgal.com>  22 Sep 2012
+
+eyefiserver (2.2.0)
+
+  * Rename DownloadLocation directive into UploadLocation.
+
+ -- Grant Nakamura <info@grantnakamura.com>  9 Jul 2011
+
+eyefiserver (2.1.1)
+
+  * Add multicard support.
+  * New IDVerification directive to turn off integritydigest verification.
+  * New Overwrite option to (en|dis)able overwriting.
+  * Read date from exif data.
+  * New global DownloadLocation directive.
+  * New AddSubFolder and RenameFile directives.
+
+ -- Grant Nakamura <info@grantnakamura.com>  1 Jul 2011
+
+eyefiserver (2.0)
+
+  * The server can now execute an arbitrary command on each uploaded photo. This
+    is a very dangerous feature and should be used with caution. On the other
+    hand it is also very cool. You can have the server FTP files, display them
+    using an image viewer, or even run sorting programs on the images.
+  * Improved security: the server now generates its own nonces instead of using
+    one that was hard coded. The nonce is based on the random library provided
+    by python. The INTEGRITYDIGEST field is also checked.
+  * Ability to read settings from a configuration file (there is a included
+    DefaultSettings.ini for reference). The file allows you to configure the
+    listen port, console output, logging, download location, and execute on
+    upload, and upload key.
+  * Some other notable improvements but not really features are the addition of
+    regression tests and support for Python 2.5. The regression tests are
+    interesting since I run them against the official Eye-Fi Manager to make
+    sure my behavior is a close match.
+
+ -- Jeff Tchang <Jeff.Tchang@gmail.com>  4 Apr 2009
+
+eyefiserver (1.0)
+
+  * Initial version
+
+ -- Jeff Tchang  <Jeff.Tchang@gmail.com>  4 Jan 2009
+
+ # ex: syntax=debchangelog

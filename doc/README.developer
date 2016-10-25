@@ -1,0 +1,32 @@
+The EyeFi server listens on port 59278.
+
+On startup the EyeFi card scans the subnet it is currently on and attempts to get an IP address via DHCP.
+
+--------------------------------------------
+
+This folder contains man page sources and some documentation about the
+protocols:
+
+* dump_http is the binary dump of a conversation between a client and a server
+
+	All requests are POST on /api/soap/eyefilm/v1, with usually just one XML
+	document: the soap command with parameters.
+
+	The one execption is the UploadPhoto command that is posted to
+	/api/soap/eyefilm/v1/upload as a multipart. There are 3 parts:
+		- SOAPENVELOPE is the XML document
+		- FILENAME is actually tar data, bad name.
+		- INTEGRITYDIGEST is a checksum of the file
+
+	All answers are XML SOAP documents.
+
+* dump_soapwithresume is a SOAP dump of a conversation between a client and a
+server.
+	It is an example of a timeout with resume transfer.
+
+	It also contains terse explanation of md5 handchecks
+
+* dump_highlevel is a dump of a conversation between a client and a server on
+the functionnal level.
+
+* firmware_updateprotocol describe firmware updates
